@@ -10,10 +10,12 @@ import UIKit
 
 internal extension UIView {
     
+    @discardableResult
     internal func autoPinToEdges() -> [NSLayoutConstraint]? {
         return self.autoPinToEdges(UIEdgeInsetsZero)
     }
     
+    @discardableResult
     internal func autoPinToEdges(_ insets: UIEdgeInsets) -> [NSLayoutConstraint]? {
         if let views = self.setUpForAutoLayout() {
             
@@ -36,6 +38,7 @@ internal extension UIView {
         return nil
     }
     
+    @discardableResult
     internal func autoPinToSidesAndBottom() -> [NSLayoutConstraint]? {
         if let views = self.setUpForAutoLayout() {
         
@@ -58,6 +61,7 @@ internal extension UIView {
         return nil
     }
     
+    @discardableResult
     internal func autoPinToSidesAndTop() -> [NSLayoutConstraint]? {
         if let views = self.setUpForAutoLayout() {
             
@@ -81,6 +85,7 @@ internal extension UIView {
         return nil
     }
     
+    @discardableResult
     internal func autoPinToBottomAndCenter() -> [NSLayoutConstraint]? {
         if let views = self.setUpForAutoLayout() {
             
@@ -104,6 +109,7 @@ internal extension UIView {
         return nil
     }
     
+    @discardableResult
     internal func autoSetHeight(_ height: Float) -> NSLayoutConstraint? {
         if self.setUpForAutoLayout() != nil {
             let constraint = NSLayoutConstraint(item: self,
@@ -119,6 +125,7 @@ internal extension UIView {
         return nil
     }
     
+    @discardableResult
     internal func autoSetWidth(_ width: Float) -> NSLayoutConstraint? {
         if self.setUpForAutoLayout() != nil {
             let constraint = NSLayoutConstraint(item: self,
