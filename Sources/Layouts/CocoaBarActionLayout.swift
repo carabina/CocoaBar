@@ -15,16 +15,16 @@ public class CocoaBarActionLayout: CocoaBarLayout {
     
     // MARK: Lifecycle
     
-    override public func updateLayoutForBackgroundStyle(newStyle: BackgroundStyle, backgroundView: UIView?) {
+    override public func updateLayoutForBackgroundStyle(_ newStyle: BackgroundStyle, backgroundView: UIView?) {
         switch newStyle {
-        case .BlurDark:
-            self.titleLabel?.textColor = UIColor.whiteColor()
-            self.actionButton?.setTitleColor(UIColor.lightTextColor(), forState: UIControlState.Normal)
-            self.activityIndicator?.color = UIColor.whiteColor()
+        case .blurDark:
+            self.titleLabel?.textColor = UIColor.white()
+            self.actionButton?.setTitleColor(UIColor.lightText(), for: UIControlState())
+            self.activityIndicator?.color = UIColor.white()
         default:
-            self.titleLabel?.textColor = UIColor.blackColor()
-            self.actionButton?.setTitleColor(self.tintColor, forState: UIControlState.Normal)
-            self.activityIndicator?.color = UIColor.darkGrayColor()
+            self.titleLabel?.textColor = UIColor.black()
+            self.actionButton?.setTitleColor(self.tintColor, for: UIControlState())
+            self.activityIndicator?.color = UIColor.darkGray()
         }
     }
     
@@ -41,8 +41,8 @@ public class CocoaBarActionLayout: CocoaBarLayout {
      */
     public func startLoading() {
         self.activityIndicator?.startAnimating()
-        self.activityIndicator?.hidden = false
-        self.actionButton?.hidden = true
+        self.activityIndicator?.isHidden = false
+        self.actionButton?.isHidden = true
     }
     
     /**
@@ -50,7 +50,7 @@ public class CocoaBarActionLayout: CocoaBarLayout {
      */
     public func stopLoading() {
         self.activityIndicator?.stopAnimating()
-        self.activityIndicator?.hidden = true
-        self.actionButton?.hidden = false
+        self.activityIndicator?.isHidden = true
+        self.actionButton?.isHidden = false
     }
 }

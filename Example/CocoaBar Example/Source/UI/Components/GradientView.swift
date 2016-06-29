@@ -16,7 +16,7 @@ class GradientView: UIView {
     
     // MARK: Properties
     
-    var colors: [UIColor] = [UIColor.blackColor(), UIColor.whiteColor()] {
+    var colors: [UIColor] = [UIColor.black(), UIColor.white()] {
         didSet {
             self.updateGradient(self.colors)
         }
@@ -53,10 +53,10 @@ class GradientView: UIView {
     
     // MARK: Private
     
-    func updateGradient(colors: [UIColor]) {
+    func updateGradient(_ colors: [UIColor]) {
         var colorRefs: [CGColor] = []
         for color in colors {
-            colorRefs.append(color.CGColor)
+            colorRefs.append(color.cgColor)
         }
         self.gradientLayer?.colors = colorRefs
     }

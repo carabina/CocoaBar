@@ -12,14 +12,14 @@ class CocoaBarDefaultLayout: CocoaBarLayout {
     
     @IBOutlet weak var titleLabel: UILabel?
 
-    override func updateLayoutForBackgroundStyle(newStyle: BackgroundStyle, backgroundView: UIView?) {
+    override func updateLayoutForBackgroundStyle(_ newStyle: BackgroundStyle, backgroundView: UIView?) {
         switch newStyle {
-        case .BlurDark:
-            self.titleLabel?.textColor = UIColor.whiteColor()
-            self.dismissButton?.setTitleColor(UIColor.lightTextColor(), forState: UIControlState.Normal)
+        case .blurDark:
+            self.titleLabel?.textColor = UIColor.white()
+            self.dismissButton?.setTitleColor(UIColor.lightText(), for: UIControlState())
         default:
-            self.titleLabel?.textColor = UIColor.blackColor()
-            self.dismissButton?.setTitleColor(self.tintColor, forState: UIControlState.Normal)
+            self.titleLabel?.textColor = UIColor.black()
+            self.dismissButton?.setTitleColor(self.tintColor, for: UIControlState())
         }
     }
 }
